@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/preview.css') }}">
+  <title>Students List</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Students List</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Register Number</th>
+          <th>Mark Scored</th>
+          <th>Grade</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for value in data %}
+        <tr>
+          <td> {{value.name}}</td>
+          <td>{{value.register_number}}</td>
+          <td>90</td>
+          <td>A</td>
+        </tr>
+        {% endfor %}
+        <!-- Add more rows as needed -->
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
