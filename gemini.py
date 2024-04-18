@@ -4,7 +4,7 @@ Gemini setup
 
 import google.generativeai as genai
 
-genai.configure(api_key="YOUR_API_KEY")
+genai.configure(api_key="AIzaSyBTm_9e7gLBHFdikwQwnXwRzx6ZS4r82Bs")
 
 # Set up the model
 generation_config = {
@@ -45,7 +45,7 @@ convo = model.start_chat(history=[
 with open("output.txt", "r") as file:
     answer = file.read()
 
-query = "assume yourself as a grammer checker and you dont have any knowledge other than grammer and spellings . correct the para and dont change the meaning. Do not output anythinng otherthan the para."
+query = "assume yourself as a grammer checker and you dont have any knowledge other than grammer and spellings . add necessary fullstops.correct the para and dont change the meaning. Do not output anythinng otherthan the para."
 
 
 convo.send_message(query+answer)

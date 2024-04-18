@@ -11,17 +11,11 @@ with open("output.txt", "r") as file:
 # Split the answers into a list
 answers = answer.split('.')
 
+with open("answerkeys.txt", "r") as file:
+    keys = file.read()
+
 # Define keys
-keys = ['Study of algorithms for problem-solving.',
-        'Organization and manipulation of data efficiently.',
-        'Various approaches to problem-solving in programming.',
-        'Analysis of resources required by algorithms.',
-        'Design and organization of computer systems.',
-        'Management of hardware resources by operating systems.',
-        'Principles and protocols underlying computer networks.',
-        'Development of systems performing tasks requiring human intelligence.',
-        'Protection of computer systems, networks, and data.',
-        'Principles and practices for developing reliable software solutions.']
+keys =keys.split('.')
 
 # Encode answers and keys
 answerEmbeddings = model.encode(answers)
@@ -40,10 +34,13 @@ for i in range(len(keys)):
             semscore = util.semantic_search(query_embedding, answer_embedding)
             semvalue = semscore[0][0]['score']
             if semvalue > 0.90:
-                marks[j] = 1
+                marks[i] = 1
 
 # Calculate final grade
 final_grade = sum(marks)
 
 print("Marks:", marks)
 print("Final score:", final_grade)
+
+with open("mark.txt", 'w') as file:
+    file.write(str(final_grade))
