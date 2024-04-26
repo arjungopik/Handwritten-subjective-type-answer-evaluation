@@ -2,7 +2,8 @@ from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 import subprocess
 import os
-from pdf2image import convert_from_path 
+from pdf2image import convert_from_path
+
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:user@localhost:5432/evaluation'
@@ -82,19 +83,19 @@ def upload():
     if request.method == 'POST':
         # Get the uploaded file
         uploaded_file = request.files['file']
-        
+        newfilename = "answerscript.pdf"
         # Save the file to the current directory
-        file_path = os.path.join(os.getcwd(), uploaded_file.filename)
+        file_path = os.path.join(os.getcwd(), newfilename)
         uploaded_file.save(file_path)
         name = request.form['name']
         register_number = request.form['register_number']
-        # script_dir = os.path.dirname(os.path.abspath(__file__))
-        # pdf_path = os.path.join(script_dir,"input.pdf")
-        # images = convert_from_path(pdf_path)
-        # for i, image in enumerate(images):
-        #     image_path = f"data/page/page_{i+1}.png"
-        #     image.save(image_path, "PNG")
-        #     print(f"Page {i+1} converted and saved as {image_path}")
+        
+        # pdf converter
+        images = convert_from_path ('answerscript.pdf',500,poppler_path = "C:\\Program Files\\poppler-24.02.0\\Library\\bin")                
+        for i in range(len(images)):
+            images[i].save('data/page/page'+str(i)+'.png')
+
+
 
         subprocess.run(["python", "main.py"], check=True)
         with open("mark.txt", "r") as file:

@@ -1,10 +1,1 @@
-Study of algorithms for problem-solving.
-Organization and manipulation of data efficiently.
-Various approaches to problem-solving in programming.
-Analysis of resources required by algorithms.
-Design and organization of computer systems.
-Management of hardware resources by operating systems.
-Principles and protocols underlying computer networks.
-Development of systems performing tasks requiring human intelligence.
-Protection of computer systems, networks, and data.
-Principles and practices for developing reliable software solutions.
+Study of algorithms for problem-solving. Organization and manipulation of data efficiently. Various approaches to problem-solving in programming. Analysis of resources required by algorithms. Design and organization of computer systems. Management of hardware resources by operating systems. Principles and protocols underlying computer networks. Development of systems performing tasks requiring human intelligence. Protection of computer systems, networks, and data. Principles and practices for developing reliable software solutions.
