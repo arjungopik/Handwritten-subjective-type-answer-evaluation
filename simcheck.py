@@ -33,11 +33,14 @@ for i in range(len(keys)):
             answer_embedding = semantic_model.encode(answers[j])
             semscore = util.semantic_search(query_embedding, answer_embedding)
             semvalue = semscore[0][0]['score']
-            if semvalue > 0.90:
+            if semvalue > 0.95:
                 marks[i] = 1
+                break
 
 # Calculate final grade
-final_grade = sum(marks)
+marks.pop()
+
+final_grade = (sum(marks)/len(marks))*10
 
 print("Marks:", marks)
 print("Final score:", final_grade)

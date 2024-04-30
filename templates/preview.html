@@ -15,16 +15,16 @@
           <th>Name</th>
           <th>Register Number</th>
           <th>Mark Scored</th>
-          <th>Grade</th>
+          <th>Answer copy</th>
         </tr>
       </thead>
       <tbody>
         {% for value in data %}
         <tr>
           <td> {{value.name}}</td>
-          <td>{{value.register_number}}</td>
+          <td>{{value.assessmentid}}</td>
           <td>{{value.mark_scored}}</td>
-          <td>A</td>
+          <td><a href="/view/{{value.id}}/{{value.assessmentid}}">view</a></td>
         </tr>
         {% endfor %}
         <!-- Add more rows as needed -->

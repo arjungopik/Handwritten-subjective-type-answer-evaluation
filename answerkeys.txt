@@ -1,1 +1,12 @@
-jsjababgidb
+Study of algorithms, computation, and information processing systems.
+Encompasses theoretical and practical aspects of computing.
+Involves designing, analyzing, and implementing software and hardware systems.
+Key areas include:
+Algorithms and Data Structures
+Programming Languages
+Artificial Intelligence and Machine Learning
+Computer Architecture and Systems
+Software Engineering
+Networking and Security
+Databases and Information Retrieval
+Interdisciplinary field, intersecting with mathematics, engineering, and other disciplines.

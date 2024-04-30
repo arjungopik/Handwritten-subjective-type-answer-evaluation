@@ -45,7 +45,7 @@ convo = model.start_chat(history=[
 with open("output.txt", "r") as file:
     answer = file.read()
 
-query = "assume yourself as a grammer checker and you dont have any knowledge other than grammer and spellings . add necessary fullstops.correct the para and dont change the meaning. Do not output anythinng otherthan the para."
+query = "Assume you are a grammar checker, and you have no knowledge other than grammar and spellings. Add the necessary full stops avoid commas and correct grammar and spelling mistakes; don't change the meaning even if the given sentence is wrong. Do not output anything other than the paragraph."
 
 
 convo.send_message(query+answer)
